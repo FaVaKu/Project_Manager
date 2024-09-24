@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Статистика собеседований</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Countdown Timer</title>
 </head>
 <body>
-  <h1>Статистика собеседований 0_0</h1>
-  <div id="chart"></div>
-  <script src="script.js"></script>
+    <p id="countdown">10</p>
+    <script>
+        let time = 10;
+        const timer = setInterval(() => {
+            document.getElementById('countdown').textContent = time <= 0 
+                ? clearInterval(timer) 
+                : time--;
+        }, 1000);
+    </script>
 </body>
 </html>
