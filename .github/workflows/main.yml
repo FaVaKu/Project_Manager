@@ -31,7 +31,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
         id: deployment
-        environment:
+        environments:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           github_repository: ${{ github.repository }}
           github_event_name: ${{ github.event_name }}
