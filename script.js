@@ -1,3 +1,4 @@
+
 const token = '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';
 const repo = 'FaVaKu/Project_Manager';
 const file = 'data.json';
@@ -16,7 +17,7 @@ form.addEventListener('submit', (e) => {
     email: formData.get('email')
   };
   fetch(`https://api.github.com/repos/${repo}/contents/${file}`, {
-    method: 'PUT',
+    method: 'POST',
     headers,
     body: JSON.stringify(data)
   })
