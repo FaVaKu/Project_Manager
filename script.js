@@ -1,5 +1,5 @@
 
-const token = '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';
+const token = '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';
 const repo = 'FaVaKu/Project_Manager';
 const file = 'data.json';
 
