@@ -1,0 +1,18 @@
+name: Update JSON file
+
+on:
+  repository_dispatch:
+    types: [update-json]
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Update JSON file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JSON_DATA: ${{ github.event.client_payload }}
+        run: |
+          echo "$JSON_DATA" > data.json
