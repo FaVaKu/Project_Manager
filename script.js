@@ -1,5 +1,4 @@
-
-const token = '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';
+const token = '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';
 const repo = 'FaVaKu/Project_Manager';
 const file = 'data.json';
 
@@ -13,11 +12,14 @@ form.addEventListener('submit', (e) => {
     'Content-Type': 'application/json'
   };
   const data = {
-    name: formData.get('name'),
-    email: formData.get('email')
+    message: 'Обновление файла',
+    content: JSON.stringify({
+      name: formData.get('name'),
+      email: formData.get('email')
+    })
   };
   fetch(`https://api.github.com/repos/${repo}/contents/${file}`, {
-    method: 'POST',
+    method: 'PUT',
     headers,
     body: JSON.stringify(data)
   })
